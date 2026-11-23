@@ -133,8 +133,8 @@ display: flex;
     position: absolute;
     /* adjust the positionings so the nav work please, top left n right */
       top: 4.5rem;
-    left: 3rem;
-    right: 3rem;
+    left: 150px;
+    right: 150px;
     background-color: var(--white);
     border: 1px solid var(--grey);
     border-radius: 28px;
