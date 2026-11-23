@@ -765,7 +765,7 @@ items: [
         "traveltips": {
             pathway: "Home / Travelling to Brunei / Essential Travel Tips",
             mainHeader: "Travelling to Brunei",
-            bannerImage: "assets/beach4.png",
+            bannerImage: "assets/beach2.png",
             subTitle: "Essential Travel Tips",
             subIntro: "Ready for an unforgettable journey to Brunei? Learn important tips and advice to maximize your experience and make the most of your visit."
         },
