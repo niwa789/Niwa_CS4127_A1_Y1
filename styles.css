@@ -1,0 +1,1888 @@
+
+
+/* var border radius: 2rem
+
+transform scale 1.05*/
+
+
+
+:root {
+    --yellow-brand: #edae00;
+    --red: #AF0000;
+    --black: #1B1212;
+    --white: #FAF9F6;
+    --grey: #CFCFCF;
+
+}
+
+
+   /* general */
+* { box-sizing: border-box;}
+body, h1, h2, p, ul { margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif ;line-height: 150%; }
+a { text-decoration: none; }
+body { line-height: 1.2; font-size: 17px; background-color: var(--white)}
+main { margin: 0 auto; justify-content: center; font-size: 1.2rem; }
+
+
+/* all img should be fit cover so no weird cropping */
+img { object-fit: cover;}
+
+/* ensure all links are var(--black) and on hover the underline shows up and turns yellow */
+
+a {
+    color: var(--black); 
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: .5rem;
+    text-decoration-thickness: 2px;
+}
+
+a:hover { text-decoration-color: var(--yellow-brand); }
+
+
+/* NAVIGATION, MENTU STYLING, VERY IMPORTANT */
+
+/* make sure nav is INFRONT of everything */
+.nav-header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--grey);
+    position: relative;
+    z-index: 1000; 
+}
+
+.site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.3rem 3rem;
+    background-color: var(--white);
+
+
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+}
+
+.logo a {
+display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+        color: var(--black); /* no yellow*/
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 7rem;
+}
+
+/* align main navs to center of header */
+.nav-links > li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links > li > a {
+    cursor: default;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1.5rem 0;
+    color: var(--black);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.nav-links > li > a:hover {
+    color: var(--red);
+}
+
+
+.mega-main:hover > a {
+    color: var(--red);
+}
+
+
+
+/* search part of the web */
+.search img {
+    width: 25px;
+
+}
+
+.search a {
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1.5rem 0;
+        color: var(--black); /* no yelow */
+}
+
+
+
+
+
+/* mega menu */
+
+.mega-second {
+    position: absolute;
+    /* adjust the positionings so the nav work please, top left n right */
+      top: 4.5rem;
+    left: 3rem;
+    right: 3rem;
+    background-color: var(--white);
+    border: 1px solid var(--grey);
+    border-radius: 28px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0s linear 0.3s;
+}
+
+
+
+/* shows mega menu ON HOVERV */
+.mega-main:hover .mega-second {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    transition-delay: 0s;
+}
+
+
+
+/* sub nav stylig, style pargraph also */
+.mega-second-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; /*dontuse space between, evenlylooks better */
+    padding: 1.3REM;
+    border-bottom: 1px solid var(--grey);
+}
+
+
+
+.mega-second-nav p.sub-item {
+    margin: 0;
+    font-weight: 540;
+    cursor: pointer; 
+    transition: color 0.25s ease
+}
+
+/* make link turn yelkow on hover */
+.mega-second-nav p.sub-item:hover,
+.mega-second-nav p.sub-item.active {
+    color: var(--red);
+    pointer-events: none; /* so user doesnt think u can click*/
+}
+
+
+
+
+/* style nav card s*/
+
+.mega-thirds {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    padding: 2rem 1rem 2rem;
+
+}
+
+
+
+.mega-second .panel {
+    display: none; /* dont display  first */
+}
+
+/*  .active class */
+.mega-second .panel.active {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+
+.mega-third {
+    position: relative;
+    display: block;
+    height: 170px;
+    overflow: hidden;
+    border-radius: 1rem;
+    color: white; /* dont use var white use pure white so u can read the text */
+    text-decoration: none;
+
+}
+
+
+.mega-third img {
+    width: 260px;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+
+.mega-third:hover img {
+    transform: scale(1.05);
+}
+
+
+.mega-third h3 {
+    position: absolute;
+    z-index: 1;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    margin: 0;
+    color: white;
+    font-size: 14px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+
+
+/* contact page */
+
+
+
+
+
+
+
+.contact-container {
+    background-image: url(assets/rainforest3.png);
+    padding: 5rem 16rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+/* contact board */
+.board {
+    background-color: var(--white);
+    text-align: left;
+    border-radius: 1rem;  
+    padding: 3rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-bottom: 4rem;
+}
+
+
+
+
+.board-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.board-left {
+    flex: 1;
+    text-align: left;
+    padding: 5rem;
+
+}
+
+.board-left img {
+    width: 20px;
+    vertical-align: middle;
+    gap: 3rem;
+}
+
+.info-details {
+    font-size: large;
+}
+
+
+.board-right {
+    flex: 1;
+    padding-right: 5rem;
+}
+
+
+
+iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+
+/* form STYLING */
+
+
+
+
+
+.form-container {
+    max-width: 950px;
+    margin: 3rem auto;
+    padding: 4rem;
+}
+
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+form { 
+    text-align: left; 
+
+}
+
+input, select, textarea { 
+    margin: 1rem 0; 
+    border-radius: 1rem;
+    padding: 1rem; 
+    width: 95%; 
+    border: 1px solid var(--grey);
+}
+
+.checkbox { 
+    display: flex; 
+    gap: 1.5rem;
+    margin: 1rem 0; 
+}
+
+textarea { 
+    resize: none; 
+}
+
+
+.button {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.button input { 
+    font-weight: bold; 
+    background-color: var(--white);
+    font-size: 1.1rem; 
+    cursor: pointer;
+    width: auto;
+    padding: 0.8rem 2rem;
+    transition: background-color 0.4s ease;
+
+}
+
+.button input:hover { 
+    background-color: var(--yellow-brand); 
+
+}
+
+
+
+
+/* things to do styling , style the top section */
+
+.things-food h1 {
+    text-align: left;
+}
+
+
+.things-food > p {
+    text-align: justify;
+}
+
+
+
+.banner-image  {
+    width: 100%;
+    height: 400px;
+
+}
+
+.sub-header {
+    text-align: left;
+}
+
+.section-divider {
+    padding: 0 5rem;
+    margin: 4rem 0 2rem 0;
+    text-align: left;
+}
+
+.sub-header {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;    
+}
+
+/* add some space after the intro */
+.sub-intro {
+    text-align: justify;
+    color: #000408;
+    margin-bottom: 3rem;
+}
+
+
+
+/* thnigs to do use restaurants  */
+.restaurants-grid {
+    padding: 2rem 10rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.listing-card {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--white);
+    overflow: hidden;
+    padding: 1rem;
+}
+
+
+.card-wrap {
+    flex: 1;
+    max-width: 45%;
+    height: auto;
+    display: flex;
+    background-color: transparent;
+    align-items: center;
+}
+
+.card-image {
+    width: 100%;
+    height: 300px;
+    border-radius: 1rem;
+}
+
+
+.card-details {
+    text-align: justify;
+    flex: 1;
+    padding-left: 5rem;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+p#pathway {
+
+    margin-bottom: 3rem;
+}
+
+h1#main-header {
+font-size: 3.5rem;
+  padding-top: 2rem;
+  margin: 0; /* get rid of the space that excists for some reason */
+}
+
+img#banner-image {
+    position: relative;
+    z-index: 2;
+    -webkit-mask-image: linear-gradient(to left, #000000, rgba(0, 0, 0, 45%)); /*make the opacity higher so itss not too dark*/
+}
+
+.site-text {
+    
+   width: 100%; /*soitdoesnt look weird in the corner */
+    color: rgb(0, 0, 0);
+    padding: 0 6rem;
+}
+
+.site-banner {
+    background-color: var(--black); /* SOO THAT THE GRADIENT WORKS SINCE THE BACK IS var(--black)*/
+    z-index: 1;
+
+  
+}
+
+
+
+
+/* tour packs button &*/
+section.explore-more {
+    margin: 3rem 0 3rem 0;
+    /* border: border: 1px solid var(--yellow-brand); */
+    border: 1px solid var(--yellow-brand);
+    padding: 1rem;
+    border-radius: .5rem;
+    width: 22%;
+    /* text-align: center; */
+}
+
+
+
+
+
+/* history and culture */
+
+
+
+.site-history-culture {
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+
+.history-text {
+    display: flex;
+    align-items: center;
+    gap: 7rem;
+}
+
+/* text leftside, make image right) */
+.textleft {
+    flex-direction: row;
+}
+
+/* OPPOSITE, image left, text right */
+.righttext {
+    flex-direction: row;
+}
+
+
+.hist-info {
+    flex: 1;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+
+
+.history-image {
+    flex: 1;
+    height: 380px;
+    border-radius: 1rem;
+    margin-bottom: 3rem;
+
+}
+
+.history-image img {
+    width: 100%;
+    height: 450px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+    border-radius: 1rem;
+}
+
+.history-image:hover img {
+    transform: scale(1.06);
+}
+
+.site-discover-mosque img {
+    width: 120px;
+    height: 120px;
+    margin-right: 0.7rem;
+        border-radius: 01rem;
+}
+
+
+.site-discover-mosque h4:hover {
+    color: var(--yellow-brand);
+        transition: color 0.2s ease-in-out;
+
+}
+
+
+/* visa requirements */
+/* exact same as history culture, remove gap and add visa image */
+.site-visa {
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5rem;
+    gap: 1.5rem;
+}
+
+
+
+/* ACCOMODATION */
+
+/* code adapted from Martsoukos, 2024 */
+
+.dropdown-wrapper {
+  position: relative;
+}
+
+/*actions*/
+.dropdown-wrapper.open .dropdown {
+  display: block;
+  background-color: var(--white);
+}
+
+.dropdown-wrapper.open .dropdown-toggle svg {
+  transform: rotate(180deg);
+}
+/*actions*/
+
+.dropdown-wrapper .dropdown-toggle,
+.dropdown-wrapper .dropdown {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 5px;
+  border: 1px solid #adb5bd;
+  background: var(--white);
+}
+
+.dropdown-wrapper .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    padding: 0 10px 0 26px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 100%;
+    height: 50px;
+    margin: 3rem 0;
+}
+
+.dropdown-wrapper .dropdown-toggle svg {
+  transition: transform 0.3s;
+}
+
+.dropdown-wrapper .dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  padding: 10px 10px 10px 0;
+  z-index: 1;
+}
+
+.dropdown-wrapper .dropdown ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.dropdown-wrapper .dropdown ul::-webkit-scrollbar {
+  width: 10px;
+}
+
+.dropdown-wrapper .dropdown ul::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+}
+
+.dropdown-wrapper .dropdown li a {
+  display: block;
+  padding: 15px 26px;
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.1s;
+}
+
+.dropdown-wrapper .dropdown li.active a,
+.dropdown-wrapper .dropdown li a:hover {
+  background: var(--grey);
+}
+
+/* boc styles */
+.hidden {
+    display: none !important;
+}
+
+
+/* end of adapted code */
+
+
+
+/* card card card stlying */
+.info-cards-grid {
+    display: grid;
+    gap: 2.5rem;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.info-card {
+    background: var(--white);
+    border: 1px solid var(--yellow-brand);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    text-align: center; /*can gvet rid of it since it looks better */
+}
+
+.card-imagewrap {
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+}
+
+.card-image:hover {
+    transform: scale(1.2);
+    transition: transform 0.9s ease;
+    
+
+
+}
+
+.card-text {
+        padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex-grow: 1;
+        justify-content: space-around; /* SO THE VIEWMORE ISNT HOVERING ODDLY */
+}
+
+.district-tag {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--yellow-brand);
+    text-transform: uppercase;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.info-card-desc {
+    font-size: 1rem;
+    margin: 0;
+    flex-grow: 1;
+}
+
+
+.card-link {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+
+
+
+
+
+p.count {
+    margin-bottom: 2rem;
+}
+
+
+
+.nav-img {
+    background-color: var(--black);
+}
+
+
+.nav-img img {
+    -webkit-mask-image: linear-gradient(to left, #000000, rgb(0 0 0 / 69%)); /*make the opacity higher so itss not too dark*/
+
+}
+
+
+
+
+
+
+/*  FOOTERINGS*/
+
+.site-footer {
+     border: 1px solid var(--grey);
+    background: var(--white);
+    color: var(--black);
+    padding: 4.5rem 1.5rem 2rem;
+        margin-top: 5rem;
+}
+
+/* ensure space on either sides so footer doesnt take u entire space*/
+.footer-container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+/* link stlyings */
+.site-footer a {
+    color: var(--black);
+    transition: color 0.2s ease-in-out;
+}
+
+
+.footer-logo{
+    align-items: center;
+    display: flex;
+}
+
+.footer-logo img {
+    
+    width: 100px;
+        margin-right: 2rem;
+}
+
+
+.footer-logo p {
+    font-size: 0.9rem;
+}
+
+
+.footer-links ul {
+
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+
+
+
+.footer-right {
+   display: flex;
+    gap: 10rem;
+}
+ 
+
+
+
+
+
+
+
+
+/* places visit in things to do */
+
+
+.district-places img {
+    width: 20%;
+    height: auto;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.district-things img {
+    width: 10%;
+    height: 10%;
+}
+
+.district-acc img {
+    width: 10%;
+    height: 10%;
+}
+  
+  
+
+.carousel-wrapper{
+  position:relative;
+  
+}
+
+/* header margin so it doesnt clip with arrows*/
+.carousel-wrapper h2{
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.carousel{
+    list-style-type:none;
+    display:flex;
+    gap:1.5rem;
+    width:100%;
+    padding:0;
+    overflow-x:auto;
+    scroll-behavior:smooth;
+    scroll-snap-type:x mandatory;
+    justify-content: center;
+
+    margin: 3rem 0;
+}
+
+
+h2.space {
+    margin-top: 5rem;
+}
+
+
+.carousel img {
+    width: 400px;
+    height: 300px;
+        border-radius: 1rem;
+
+    display: block;
+}
+
+
+/* cut content 
+.carousel::-webkit-scrollbar{
+  display:none;
+}
+
+ 
+.carousel::scroll-button(left),
+.carousel::scroll-button(right) {
+    position: absolute;
+
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+    border: none;
+
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--yellow-brand);
+    color: white;
+}
+
+.carousel::scroll-button(left) {
+    content: "<---";
+    left: calc(50% - 45px);
+
+    z-index: 10;
+}
+
+.carousel::scroll-button(right) {
+    content: "--->";
+    left: calc(50% + 5px);
+ 
+    z-index: 10;
+}
+
+.carousel::scroll-button(left):disabled,
+.carousel::scroll-button(right):disabled {
+    background-color: #bdbdbd;
+    color: white;
+    cursor: default;
+    pointer-events: none;
+}
+*/
+
+
+.card {
+
+    text-align: center;
+}
+
+li.card {
+    border: 1px solid var(--yellow-brand);
+    border-radius: 1rem;
+}
+
+
+
+/* bets time to visit section */
+
+.site-best {
+    padding: 0 5rem;
+    margin-bottom: 5rem;
+    display: block;
+}
+
+.site-best h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+        margin-top: 4rem;
+}
+
+.site-best h4 {
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.site-best p {
+
+    text-align: justify;
+
+    margin-bottom: 1.2rem;
+}
+
+
+
+.best-image-right {
+    width: 380px;
+    height: 240px;
+    float: right;
+    margin: 0 0 1.5rem 2rem;
+    border-radius: 01rem;
+}
+
+.best-image-left {
+    width: 380px;
+    height: 240px;
+    float: left;
+    margin: 0 2rem 1.5rem 0;
+    border-radius: 01rem;
+}
+
+
+
+.best-weather-image {
+    width: 500px;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+}
+
+
+
+
+
+
+
+
+/* getting to brunei */
+
+/*chang ethe grid so that is shows 3 not 4 */
+.getting {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+   padding: 2rem 0;
+}
+
+
+
+/* searcj page */
+
+.search-page {
+    margin: 5rem auto;
+    padding: 0 2rem;
+}
+
+#search-form {
+    max-width: 700px;
+    margin: auto;
+
+}
+
+#searching-input {
+    border: 1px solid #000000;
+    border-radius: 1rem;
+}
+
+
+#searching-results {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.search-result-card {
+    border: 1px solid var(--yellow-brand);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.search-result-card img {
+    width: 100%;
+    height: 220px;
+}
+
+.search-result-card h4,
+.search-result-card p,
+.search-result-card a {
+    margin: 1rem;
+}
+
+.search-result-card a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+/* home page styling, make sure to link other wsites */
+.home-hero {
+min-height: 550px;
+    display: flex;
+    padding: 5rem 8rem;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+
+        background: url(assets/bg.png);
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
+
+.hero-content h1 {
+    font-size: 5rem;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.hero-content img {
+    width: 200px;
+}
+
+
+
+
+.home-section {
+    padding: 5rem 7rem;
+}
+
+.home-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 3rem;
+    
+}
+
+.home-heading h2,
+.accommodation-content h2 {
+    font-size: 2.3rem;
+    margin-bottom: 1rem;
+
+}
+
+
+
+
+.home-card-container {
+    display: flex;
+    gap: 1.5rem;
+
+    padding: 1rem 0 2rem;
+
+justify-content: center;
+}
+
+.home-card {
+    flex: 0 0 280px;
+    height: 350px;
+
+    position: relative;
+    overflow: hidden;
+
+    border-radius: 1rem;
+}
+
+.home-card img {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.4s ease;
+}
+
+.home-card:hover img {
+    transform: scale(1.08);
+}
+
+.home-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent 70%);
+}
+
+.home-card-text {
+    position: absolute;
+    z-index: 1;
+
+    bottom: 0rem;
+        left: 1.2rem;
+    right: 1rem;
+
+    color: white;
+}
+
+.home-card-text h3 {
+    font-size: 1.3rem;
+    
+}
+
+
+
+
+
+/* trav essenitals, 3 grid 3 grid */
+
+.site-essentials {
+    padding: 1rem 15rem;
+}
+
+
+.site-essentials .info-cards-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+
+
+
+/* popup SUCCESFULL!! */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 1.7rem;
+    border-radius: .6rem;
+    text-align: center;
+    width: 300px;
+}
+
+.popup-content button {
+    padding: .6rem 1.5rem;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*responsive */
+
+/* do responsive design for 9000, maybe 600, 400 */
+
+@media (max-width: 900px) {
+
+    .home-hero {
+        padding: 4rem 3rem;
+    }
+
+    .home-section {
+        padding: 4rem 3rem;
+    }
+
+    .home-card-container {
+
+        overflow: scroll;
+    }
+
+
+
+    .home-accommodation {
+        padding: 4rem 3rem;
+        gap: 2rem;
+    }
+
+    /* add padding on either side AND make it so theres onlt 2 cards not 3*/
+    .site-essentials .info-cards-grid {
+        padding: 0 2rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .site-essentials {
+        padding: 1rem;
+    } 
+    
+
+    /*carousel, remove the ujustify since its makign teh scroll nto work */
+    .carousel{
+        /* AND ALSO MAKE THE SCROLL APPEAR SO USER KNOW */
+    
+        overflow: visible;
+        justify-content: left;
+
+
+    }
+    .carousel-wrapper {
+        overflow: scroll; 
+    }
+
+
+    /* THIS IS FOR THE REUSED THINGS TO DO LOCAL FOOD STYLING */
+        .restaurants-grid {
+        padding: 2rem 3rem;
+        gap: 2rem;
+    }
+
+    .listing-card {
+        padding: 0.8rem;
+        gap: 1.5rem;
+    }
+
+    .card-wrap {
+        flex: 1;
+        max-width: 40%;
+    }
+
+    .card-image {
+        height: 280px;
+    }
+
+    .card-details {
+        width: 60%;
+        padding-left: 1rem;
+    }
+
+    .card-meta-info {
+        margin-top: 2rem;
+    }
+
+
+
+    /* history religion page best ... pages*/
+    .site-text {
+        padding: 0 3rem;
+    }
+
+    .section-divider {
+        padding: 0 3rem;
+    }
+
+    .site-history-culture {
+        padding: 0 3rem;
+        gap: 3rem;
+    }
+
+    /* USE display and wrap so that the pictures arent right after each other */
+    .history-text {
+        gap: .1rem;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        flex-direction: column;
+    }
+
+    .hist-info {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .history-image {
+        width: 100%;
+        height: 320px;
+        flex: none;
+    }
+
+    .history-image img {
+        width: 100%;
+        height: 100%;
+
+    }
+
+    .hist-info {
+        gap: 0.1rem;
+    }
+
+
+    /* TTHE CVERITCAL CARDS */
+    /* accomodation */
+    .info-cards-grid {
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+
+
+    /* vertical getting to brunei chagne the end part from 3 to 1*/
+    .getting {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+
+    .banner-image {
+        height: 320px;
+    }
+
+
+    
+    /* contact page styling*/
+    /* make padding wayyy smaller */
+    .contact-container {
+        padding: 5rem 5rem;
+    }
+
+    .board {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .board-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 2rem;
+    }
+
+    .board-left {
+        padding: 0;
+        width: 100%;
+    }
+
+    .board-left h2 {
+        font-size: 1.5rem;
+    }
+
+    .board-left-info {
+        font-size: 1rem;
+        overflow-wrap: anywhere;
+    }
+
+    .info-details {
+        font-size: 1rem;
+    }
+
+    .info-details img {
+        width: 18px;
+    }
+
+    .board-right {
+        width: 100%;
+        padding: 0;
+    }
+
+    iframe {
+        width: 100%;
+        height: 280px;
+    }
+
+    /* contact form */
+    .form-container {
+        width: calc(100% - 2rem);
+        margin: 2rem auto;
+        padding: 1.5rem;
+    }
+
+    .form-container h2 {
+        font-size: 1.5rem;
+    }
+
+
+
+    /* Ffooterings */
+    .site-footer {
+        padding: 2.5rem 1.5rem 1.5rem;
+        margin-top: 4rem;
+    }
+
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-left: 0;
+    }
+
+    .footer-logo {
+        margin-top: 2rem;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .footer-logo img {
+        width: 70px;
+        margin-right: 0;
+    }
+
+
+
+
+    #searching-results {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .site-best {
+        padding: 0 1.5rem;
+    }
+
+    .best-image-right,
+    .best-image-left {
+        float: none;
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 1.5rem 0;
+    }
+
+    .site-nav {
+        display: flex;
+        align-items: center;
+        /* padding: 0.3rem 3rem; */
+        /* background: white; */
+        flex-direction: column;
+    }
+
+    .nav-links {
+        /* display: flex; */
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .mega-second,
+    .mega-second,
+    .mega-second {
+  
+        left: 1rem;
+        right:1rem;
+        top: 8rem;
+  
+    }
+
+
+
+    /* footer */
+    /* add col so it dsnt stretch, make gap smaller  */
+    .footer-right {
+        display: flex;
+        gap: 1rem;
+        flex-direction: column;
+        padding-left: 2rem;
+    }
+
+
+    /* travel tips */
+    .travel-tips-content {
+        padding: 0 3rem;
+    }
+
+    .tips-info-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .emergency-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+/* tablet */
+
+
+@media (max-width: 600px) {
+
+    .travel-tips-content {
+        padding: 0 1.5rem;
+        gap: 3rem;
+    }
+
+    .tips-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tips-section-heading h3 {
+        font-size: 1.6rem;
+    }
+
+    .tips-emergency-section {
+        padding: 1.5rem;
+    }
+
+    .emergency-card {
+        padding: 1rem;
+    }
+
+}
+
+
+
+
+/* !!!!!!!!!!!!!!!!!!!!!! 400 */
+
+
+@media (max-width: 400px) {
+    /* make font pargraph 1rem */
+    p {
+        font-size: 1rem;
+    }
+    
+    /* navigation */
+    /* superi mportant, make the 2nd nav column, the images keep flex? */
+
+    .mega-second-nav {
+        display: flex;
+        padding: 1.3REM;
+        flex-direction: column;
+        GAP: .8rem;
+
+    }
+    
+    /* make the third nav be displayed in 2 2 2 */
+
+    .mega-second .panel.active,
+    .mega-second .panel.active,
+    .mega-second .panel.active {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    /* padding smaller */
+    .search a {
+
+        padding: .5rem 0;
+
+    }
+
+
+    .home-hero {
+        min-height: 350px;
+        padding: 3rem 1.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+
+
+    .hero-content img {
+        width: 150px;
+    }
+
+
+    .home-section {
+        padding: 3rem 1.5rem;
+    }
+
+
+    /* add scroll to the cards and make it a bit smaller */
+ 
+
+    .home-card {
+        flex: 0 0 170px;
+        height: 200px;
+    }
+
+
+    .home-heading h2,
+    .accommodation-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .home-accommodation {
+        flex-direction: column;
+        padding: 3rem 1.5rem;
+    }
+
+    .accommodation-image {
+        width: 100%;
+    }
+
+    .accommodation-image img {
+        height: 250px;
+    }
+
+    .site-essentials .info-cards-grid {
+        grid-template-columns: 1fr;
+    }
+
+    
+
+    .home-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+
+    /* carousel image cards, make it smaller */
+    .carousel img {
+        width: 200px;
+        height: 150px;
+    }
+
+    .carousel h4 {
+        font-size: 1rem;
+    }
+
+
+
+
+    /* THIS IS FOR THE REUSED THINGS TO DO LOCAL FOOD STYLING */
+
+    .restaurants-grid {
+        padding: 1.5rem 1rem;
+        gap: 1.5rem;
+    }
+
+    .listing-card {
+        flex-direction: column;
+        padding: 0;
+        gap: 1rem;
+    }
+
+    .card-wrap {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .card-image {
+        width: 100%;
+        height: 220px;
+    }
+
+    .card-details {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .card-meta-info {
+        margin-top: 1.5rem;
+    }
+
+
+
+    /* history ... */
+        .site-text {
+        padding: 0 1.2rem;
+    }
+
+    h1#main-header {
+        font-size: 2rem;
+    }
+
+    .section-divider {
+        padding: 0 1.2rem;
+        margin-top: 2rem;
+    }
+
+    .sub-header {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .sub-intro {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .site-history-culture {
+        padding: 0 1.2rem;
+        gap: 2.5rem;
+        margin-bottom: 3rem;
+    }
+
+
+
+    .hist-info {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .hist-info h2 {
+        font-size: 1.4rem;
+    }
+
+    .history-image {
+        width: 100%;
+        height: 230px;
+    }
+
+    .banner-image {
+        height: 230px;
+    }
+
+    .site-discover-mosque img {
+        width: 90px;
+        height: 90px;
+
+    }
+
+
+    /* vertical card hotel accomodation change to 1 */
+
+    .info-cards-grid {
+
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 1.5rem;
+        
+    }
+
+    .card-text {
+        padding: .8rem;
+
+        gap: .8rem;
+      
+    }
+
+    /* make img a lil smaller */
+    .card-imagewrap {
+        height: 150px;
+    }
+
+    /* the best vtiem to visit make the padding small */
+    .getting {
+        padding: .5rem 0;
+    }
+
+    .site-best h3 {
+  
+        margin-top: .1rem;
+    }
+
+
+    /* contact */
+    .contact-container {
+        padding: 3rem 1rem;
+    }
+
+    /* visa requirements */
+    .site-visa {
+    padding: 0 1rem;
+
+    }
+
+
+    #searching-results {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
